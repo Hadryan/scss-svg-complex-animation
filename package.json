@@ -1,0 +1,50 @@
+{
+  "name": "scss-svg-complex-animation",
+  "version": "0.1.0",
+  "description": "Complex Animation based on SCSS and SVG",
+  "main": "src/index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "start": "gulp webpack-dev-server --port 8080 --host 0.0.0.0",
+    "gulp": "gulp",
+    "bower": "bower"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cre8labs/scss-svg-complex-animation.git"
+  },
+  "keywords": [
+    "SVG",
+    "SCSS",
+    "animation",
+    "CSS",
+    "SASS",
+    "Vector"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cre8labs/scss-svg-complex-animation/issues"
+  },
+  "homepage": "https://github.com/cre8labs/scss-svg-complex-animation#readme",
+  "devDependencies": {
+    "bourbon": "^4.2.6",
+    "bower": "^1.6.5",
+    "css-loader": "^0.21.0",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-util": "^3.0.7",
+    "image-webpack-loader": "^1.6.2",
+    "imagemin": "^3.2.2",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.7.1",
+    "minimist": "^1.2.0",
+    "node-sass": "^3.4.0",
+    "open": "0.0.5",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  }
+}
