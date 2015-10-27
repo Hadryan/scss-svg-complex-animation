@@ -10,8 +10,7 @@
  */
 exports.task = function (cb) {
 	runSequence.use(gulp);
-	runSequence('clean', 'bump', 'webpack-build-prod', 'copy-build-to-dist',// 'deploy-gh-pages',
-	//runSequence('clean', 'webpack-build-prod',// 'deploy-gh-pages',
+	runSequence('clean', 'bump', 'webpack-build-prod', 'copy-build-to-dist', 'deploy-gh-pages',
 		function (error) {
 			if (error) {
 				console.log(error.message);

@@ -1,6 +1,6 @@
 {
   "name": "scss-svg-complex-animation",
-  "version": "0.1.1-RC.4",
+  "version": "0.2.0",
   "description": "Complex Animation based on SCSS and SVG",
   "main": "src/index.js",
   "scripts": {
