@@ -1,1 +1,0 @@
-# scss-svg-complex-animation

@@ -1,7 +1,0 @@
-.idea
-node_modules
-npm-debug.log
-bower_components
-build/bundle.js
-.publish
-dist
