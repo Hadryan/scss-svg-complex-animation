@@ -12,12 +12,12 @@ $color3: #159CCE; //#159CCE; //#CC58E4; //#BE32DC;  //#E47100; // orange
 //$color4: #373737;
 $color4: #292929;
 $color5: #000;
-$color6: #B501B5;
+$color6: #8363b5;
 $color7: #FB8D04;
 
 //////////////////////////
-$screen-color: darken(rgba(#fff, .5), 20%);
-$screen-color-darken: darken($screen-color, 20%);
+$screen-color: darken(rgba(#fff, .3), 25%);
+$screen-color-darken: darken($screen-color, 40%);
 
 $screen:400px;
 
@@ -78,35 +78,8 @@ $stroke-6: $stroke-5*2 + 7;
   /////////////////////////////////////////////////////
 
 
-  .middle-center-browser {
-    @include transform(rotate(0deg) );
-  }
-  @for $s from 0 through 5 {
-    .screen-browser:nth-child(#{$s}) {
-      @include transform(
-              rotate(360deg / 5 * $s + (360deg/5)*2)
-              translate(102px, 0px)
-      );
-    }
-  }
 
-  $browser-scale:(.17);
-  $browser-rotate:(92deg);
-  .screen-browser:nth-child(1) path {
-    @include transform(translate(5px, -4px) rotate($browser-rotate) scale( $browser-scale));
-  }
-  .screen-browser:nth-child(2) path {
-    @include transform(translate(5.5px, -5px) rotate($browser-rotate) scale( $browser-scale));
-  }
-  .screen-browser:nth-child(3) path {
-    @include transform(translate(4.5px, -5px) rotate($browser-rotate) scale( $browser-scale));
-  }
-  .screen-browser:nth-child(4) path {
-    @include transform(translate(5px, -5px) rotate($browser-rotate) scale( $browser-scale));
-  }
-  .screen-browser:nth-child(5) path {
-    @include transform(translate(6px, -5px) rotate($browser-rotate) scale(0.19));
-  }
+
 
 
 
@@ -204,6 +177,80 @@ $delay:$time/4;
   }
 }
 
+.middle-center-tiangle {
+  @include transform(rotate(34deg) );
+}
+
+@for $t from 0 through 5 {
+  .screen-triangle:nth-child(#{$t}) {
+    @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+    @include animation-set;
+    @include animation-name(screen-triangle#{$t});
+    @include animation-duration($time);
+    @include animation-delay($delay*2);
+  }
+
+  @keyframes screen-triangle#{$t}{
+    0% {
+      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+    }
+    10% {
+      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+    }
+    11% {
+      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+
+    }
+    29% {
+      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+
+    }
+    30% {
+      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+    }
+    100% {
+      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(16px, 4.5px));
+    }
+
+  }
+}
+$triangle-scale: .3;
+.screen-triangle polygon{
+  fill: rgba($screen-color, 1);
+  stroke-linejoin: bevel; // miter; //round;
+  @include transform(rotate(-80deg)  scale($triangle-scale)  );
+  @include animation-set;
+  @include animation-name(triangle-color);
+  @include animation-duration($time);
+  @include animation-delay($delay*2);
+}
+@include keyframes(triangle-color) {
+  0% {
+    fill: rgba($screen-color, 1);
+    @include transform(rotate(-80deg)  scale($triangle-scale)  );
+    stroke-width: 3;
+  }
+  10% {
+    fill: rgba($screen-color, 1);
+    @include transform(rotate(-80deg)  scale($triangle-scale)  );
+    stroke-width: 3;
+  }
+  11%, 29% {
+    fill: $color4;
+    @include transform(rotate(-80deg)  scale($triangle-scale)  );
+    stroke-width: 3;
+  }
+  30% {
+    fill: rgba($screen-color, 1);
+    @include transform(rotate(-80deg)  scale($triangle-scale)  );
+    stroke-width: 3;
+  }
+  100% {
+    fill: rgba($screen-color, 1);
+    @include transform(rotate(-80deg)  scale($triangle-scale)  );
+    stroke-width: 3;
+  }
+}
 
 ////////////////////////////////////////// part-2
 .middle-center-system {
@@ -409,8 +456,8 @@ $delay:$time/4;
   }
 }
 
-$media-top: 84px;
-@for $s from 0 through 5 {
+$media-top: 87px;
+@for $s from 0 through 15 {
   .media-system:nth-child(#{$s}) {
     @include transform(rotate(360deg / 5 * $s) translate($media-top, 0px));
     @include animation-set;
@@ -422,12 +469,8 @@ $media-top: 84px;
     0% {
       @include transform(rotate(360deg / 5 * $s) translate($media-top, 0px));
     }
-    10% {
-      @include transform(rotate(-160deg + 15deg*$s) translate($media-top, 0px));
-    }
-
-    30% {
-      @include transform(rotate(-160deg + 15deg*$s) translate($media-top, 0px));
+    10%,30% {
+      @include transform(rotate(-200deg + 22deg*$s) translate($media-top, 0px));
     }
     40% {
       @include transform(rotate(360deg / 5 * $s) translate($media-top, 0px));
@@ -467,7 +510,7 @@ $media-top: 84px;
 }
 
 .circle-7 {
-  stroke-width: 18 ;
+  stroke-width: 12 ;
   stroke: $screen-color;
   @include animation-set;
   @include animation-name(part-2-color);
@@ -483,7 +526,7 @@ $media-top: 84px;
     stroke: $screen-color;
   }
   13%, 26% {
-    stroke: $color4;
+    stroke: $color3;
   }
   30% {
     stroke: $screen-color;
@@ -492,13 +535,17 @@ $media-top: 84px;
     stroke: $screen-color;
   }
 }
-
+.circle-7c {
+  stroke-width: 18 ;
+  stroke: $screen-color;
+  stroke-dasharray: 134 ;
+}
 .circle-7a {
-  stroke-width: 14 ;
-  stroke-dashoffset: 1700;
+  stroke-width: 9 ;
+  stroke-dashoffset: 1707;
   stroke-dasharray: 558 ;
-  stroke: $color3;
-  @include transform(rotate(-38deg));
+  stroke: $color4;
+  @include transform(rotate(-32deg));
   @include animation-set;
   @include animation-name(circle-7a);
   @include animation-duration($time);
@@ -531,7 +578,77 @@ $media-top: 84px;
   }
 }
 
+.circle-7-media {
+  //stroke: lighten(rgba($screen-color, 1), 23%);
+  stroke: $color4;
+  stroke-width: 0 ;
+  stroke-dasharray: 23,8, 24,8, 23,6, 20,11, 20,401;
+  @include transform(rotate(201deg));
+  @include animation-set;
+  @include animation-name(circle-7-media );
+  @include animation-duration($time);
+  @include animation-delay($delay);
+}
+
+@include keyframes(circle-7-media ) {
+  0% {
+    stroke-width: 0 ;
+  }
+  10% {
+    stroke-width: 0 ;
+  }
+  11%, 28% {
+    stroke-width: 20 ;
+
+  }
+  29% {
+    stroke-width: 0 ;
+  }
+  100% {
+    stroke-width: 0 ;
+  }
+}
+.circle-7-bg {
+  @include transform(rotate(0deg));
+
+}
+
 //////////////////////////////////////////////////part-4
+.middle-center-browser {
+  @include transform(rotate(0deg) );
+}
+@for $s from 0 through 5 {
+  .screen-browser:nth-child(#{$s}) {
+    @include transform(
+            rotate(360deg / 5 * $s + (360deg/5)*2)
+            translate(104px, 0px)
+    );
+  }
+}
+.screen-browser:nth-child(3) {
+  @include transform(
+          rotate(360deg / 5 * 3 + (360deg/5)*2)
+          translate(104px, -2px)
+  );
+}
+
+$browser-scale:(.17);
+$browser-rotate:(92deg);
+.screen-browser:nth-child(1) path {
+  @include transform(translate(5px, -4px) rotate($browser-rotate) scale( $browser-scale));
+}
+.screen-browser:nth-child(2) path {
+  @include transform(translate(5.5px, -5px) rotate($browser-rotate) scale( $browser-scale));
+}
+.screen-browser:nth-child(3) path {
+  @include transform(translate(4.5px, -5px) rotate($browser-rotate) scale( $browser-scale));
+}
+.screen-browser:nth-child(4) path {
+  @include transform(translate(5px, -5px) rotate($browser-rotate) scale( $browser-scale));
+}
+.screen-browser:nth-child(5) path {
+  @include transform(translate(6px, -5px) rotate($browser-rotate) scale(0.19));
+}
 
 
 .middle-origin-browser {
@@ -559,12 +676,12 @@ $media-top: 84px;
 
 
 .screen-browser circle {
-  stroke-width: 2px;
-  fill: $color1 ;
-  stroke: rgba($screen-color, 1) ;
-  @include transform(rotate(134deg) );
+  stroke-width: 1px;
+  fill: lighten(rgba($screen-color, 1), 20%);
+  stroke: $screen-color;
+  @include transform(rotate(315deg) );
 
-  stroke-dasharray: 30,0 ;
+  stroke-dasharray: 17,10 ;
   @include animation-set;
   @include animation-name(screen-browser);
   @include animation-duration($time);
@@ -572,34 +689,28 @@ $media-top: 84px;
 }
 @include keyframes(screen-browser) {
   0% {
-    stroke-dasharray: 30,0 ;
-    stroke: rgba($screen-color, 1) ;
-    fill: $color1 ;
-    stroke-width: 2px;
+    stroke: $screen-color;
+    fill: lighten(rgba($screen-color, 1), 20%);
   }
   10% {
-    stroke-dasharray: 30,0 ;
-    stroke: rgba($screen-color, 1) ;
-    fill: $color1 ;
-    stroke-width: 2px;
+    stroke: $screen-color;
+    fill: lighten(rgba($screen-color, 1), 20%);
   }
-  11%,29% {
-    stroke-dasharray: 30,10 ;
-    stroke: $color4 ;
+  11%,29%{
     fill: $color4 ;
-    stroke-width: 4px;
   }
+  16%,24% {
+    stroke: $color1 ;
+
+  }
+
   30% {
-    stroke-dasharray: 30,0 ;
-    stroke: rgba($screen-color, 1) ;
-    fill: $color1 ;
-    stroke-width: 2px;
+    stroke: $screen-color;
+    fill: lighten(rgba($screen-color, 1), 20%);
   }
   100% {
-    stroke-dasharray: 30,0 ;
-    stroke: rgba($screen-color, 1) ;
-    fill: $color1 ;
-    stroke-width: 2px;
+    stroke: $screen-color;
+    fill: lighten(rgba($screen-color, 1), 20%);
   }
 }
 .screen-browser path {
@@ -630,68 +741,87 @@ $media-top: 84px;
 
 /////////////////////////////////////////////////////////
 .circle-8 {
-  stroke-width: 2;
+  stroke-width: 1;
+  stroke: $screen-color;
+
+
+}
+.circle-8d {
+  stroke-width: 1;
+  stroke: $screen-color;
+
+}
+.circle-8e {
+  stroke-width: 0;
   stroke: $screen-color;
   @include animation-set;
-  @include animation-name(part-4-stroke);
+  @include animation-name(circle-8e);
   @include animation-duration($time);
   @include animation-delay($delay*2);
 }
-@include keyframes(part-4-stroke) {
+
+
+@include keyframes(circle-8e) {
   0% {
     stroke: $screen-color;
+    stroke-width: 0;
   }
   10% {
     stroke: $screen-color;
+    stroke-width: 0;
   }
   11%, 29% {
-    stroke: $color4;
+    stroke: rgba($color4, 1);
+    stroke-width: 10;
   }
   30% {
     stroke: $screen-color;
+    stroke-width: 0;
   }
   100% {
     stroke: $screen-color;
+    stroke-width: 0;
   }
 }
 
 .circle-8a {
-  stroke-width: 5 ;
+  stroke-width: 6 ;
   stroke: $screen-color;
-  stroke-dasharray: 5;
-  @include transform(rotate(0deg));
+  stroke-dasharray: 1,14,1,28,1, 87;
+  @include transform(rotate(21deg)); //26
   @include animation-set;
   @include animation-name(circle-8a);
   @include animation-duration($time);
   @include animation-delay($delay*2);
+  stroke-linecap:round;
 
 }
 @include keyframes(circle-8a) {
   0% {
     stroke: $screen-color;
-    @include transform(rotate(0deg));
+    @include transform(rotate(21deg));
   }
   10% {
     stroke: $screen-color;
-    @include transform(rotate(-54deg));
+    @include transform(rotate(21deg));
   }
   11%, 29% {
-    stroke: $color7;
+    stroke: rgba($color1, 1);
   }
   30% {
     stroke: $screen-color;
-    @include transform(rotate(-54deg));
+    @include transform(rotate(21deg));
   }
   100% {
     stroke: $screen-color;
-    @include transform(rotate(-360deg));
+    @include transform(rotate(381deg));
   }
 }
 
 .circle-8b {
-  stroke-width: 4;
-  stroke: $screen-color ;
-  stroke-dasharray: 116,17;
+  stroke-width: 11;
+stroke: lighten($screen-color, 15%);
+  //stroke-dasharray: 116,17;
   @include transform(rotate(0deg));
   @include animation-set;
   @include animation-name(circle-8b);
@@ -699,138 +829,93 @@ $media-top: 84px;
   @include animation-delay($delay*2);
 
 }
-@include keyframes(circle-8b) {
-  0% {
-    stroke: $screen-color;
-    @include transform(rotate(0deg));
-  }
-  10% {
-    stroke: $screen-color;
-  }
-  11%, 29% {
-    //stroke: $color7;
-    @include transform(rotate(-88deg));
-  }
-  30% {
-    stroke: $screen-color;
-  }
-  100% {
-    stroke: $screen-color;
-    @include transform(rotate(-360deg));
-  }
-}
+
 
 .circle-8c {
-  stroke-width: 2;
+  stroke-width: 10;
   stroke: $screen-color;
-  @include transform(rotate(34deg));
+  stroke-dasharray: 1, 130.4;
+  @include transform(rotate(0deg));
   @include animation-set;
   @include animation-name(circle-8c);
   @include animation-duration($time);
   @include animation-delay($delay*2);
+  stroke-linecap:round;
 }
 @include keyframes(circle-8c) {
   0% {
     stroke: $screen-color;
-
+    stroke-width: 10;
+    @include transform(rotate(0deg));
   }
   10% {
     stroke: $screen-color;
+    stroke-width: 10;
+    @include transform(rotate(-1.5deg));
   }
+
   11%, 29% {
-    stroke: $color7;
+    stroke: $color4;
   }
+  15%, 35%{
+    stroke-width: 23;
+  }
+
   30% {
     stroke: $screen-color;
+    @include transform(rotate(-1.5deg));
   }
+  50%{
+    stroke-width: 10;
+}
   100% {
     stroke: $screen-color;
+    stroke-width: 10;
+    @include transform(rotate(1440deg));
   }
 }
 
 ////////////////
 
-.middle-center-tiangle {
-  @include transform(rotate(-22.5deg) );
-}
 
-@for $t from 0 through 5 {
-  .screen-triangle:nth-child(#{$t}) {
-    @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(114px, 7px));
-    @include animation-set;
-    @include animation-name(screen-triangle#{$t});
-    @include animation-duration($time);
-    @include animation-delay($delay*2);
-  }
-
-  @keyframes screen-triangle#{$t}{
-    0% {
-      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(114px, 7px));
-    }
-    10% {
-      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(114px, 7px));
-    }
-    11% {
-      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(108px, 7px));
-
-    }
-    29% {
-      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(108px, 7px));
-
-    }
-    30% {
-      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(114px, 7px));
-    }
-    100% {
-      @include transform(rotate(360deg / 5 * $t - 360deg/5) translate(114px, 7px));
-    }
-
-  }
-}
-
-.screen-triangle polygon{
-  fill: rgba($screen-color, 1);
-  stroke: $color1;
-  stroke-width: 3;
-  stroke-linejoin: bevel; // miter; //round;
-  @include transform(rotate(270deg)  scale(.34)  );
+////////////////////////////////////////////////////////////// part-5
+.circle-9e {
+  stroke-width: 12;
+  stroke: lighten($screen-color, 15%) ;
+ // stroke-dasharray: 85,48;
   @include animation-set;
-  @include animation-name(triangle-color);
+  @include animation-name(circle-9e);
   @include animation-duration($time);
-  @include animation-delay($delay*2);
+  @include animation-delay($delay*3);
+  stroke-linecap:round;
 }
-@include keyframes(triangle-color) {
+@include keyframes(circle-9e) {
   0% {
-    fill: rgba($screen-color, 1);
-    @include transform(rotate(270deg)  scale(.34)  );
-    stroke-width: 3;
+    stroke: lighten($screen-color, 15%) ;
+   // stroke-dasharray: 85,48;
   }
   10% {
-    fill: rgba($screen-color, 1);
-    @include transform(rotate(270deg)  scale(.34)  );
-    stroke-width: 3;
+    stroke: lighten($screen-color, 15%) ;
+   // stroke-dasharray: 85,48;
   }
   11%, 29% {
-    fill: $color4;
-    @include transform(rotate(270deg)  scale(.34)  );
-    stroke-width: 3;
+    stroke: rgba($color6, .1);
+  //  stroke-dasharray: 655,48;
   }
   30% {
-    fill: rgba($screen-color, 1);
-    @include transform(rotate(270deg)  scale(.34)  );
-    stroke-width: 3;
+    stroke: lighten($screen-color, 15%) ;
+  //  stroke-dasharray: 85,48;
   }
   100% {
-    fill: rgba($screen-color, 1);
-    @include transform(rotate(270deg)  scale(.34)  );
-    stroke-width: 3;
+    stroke: lighten($screen-color, 15%) ;
+  //  stroke-dasharray: 85,48;
   }
 }
-////////////////////////////////////////////////////////////// part-5
+
 .circle-9 {
-  stroke-width: 1 ;
+  stroke-width: 3 ;
   stroke: $screen-color ;
-  stroke-dasharray: 1,2;
+  stroke-dasharray: 57,80;
   @include animation-set;
   @include animation-name(part-5-stroke);
   @include animation-duration($time);
@@ -839,26 +924,30 @@ $media-top: 84px;
 @include keyframes(part-5-stroke) {
   0% {
     stroke: $screen-color;
+    @include transform(rotate(-100deg));
   }
   10% {
     stroke: $screen-color;
   }
   11%, 25% {
-    stroke: $color6;
+    stroke: rgba($color6, .3);
+    @include transform(rotate(-280deg));
   }
   26% {
     stroke: $screen-color;
   }
   100% {
     stroke: $screen-color;
+    @include transform(rotate(-460deg));
   }
 }
 
 
 .circle-9a {
-  stroke-width: 5 ;
+  stroke-width: 8 ;
   stroke: $screen-color ;
-  stroke-dasharray: 2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8, 2,353 ;
+  stroke-dasharray: 25,47, 17,10,8,11;
+  //stroke-dasharray: 2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8,2,8, 2,353 ;
   @include transform(rotate(9deg));
   @include animation-set;
   @include animation-name(circle-9a );
@@ -875,21 +964,20 @@ $media-top: 84px;
     stroke: $screen-color ;
   }
   11%,25% {
-    stroke: $color6 ;
-    @include transform(rotate(random(360)+deg));
+    stroke: rgba($color6, .3);
+    @include transform(rotate(random(180)+deg));
   }
   26%{
     stroke: $screen-color ;
   }
   100% {
-    @include transform(rotate(720deg));
+    @include transform(rotate(360deg));
   }
 }
-
 .circle-9b {
-  stroke-width: 7 ;
+  stroke-width: 5 ;
   stroke: $screen-color ;
-  stroke-dasharray: 404,404;
+  stroke-dasharray: 30,80;
   @include animation-set;
   @include animation-name(circle-9b );
   @include animation-duration($time);
@@ -905,7 +993,7 @@ $media-top: 84px;
     stroke: $screen-color ;
   }
   11%,25% {
-    stroke: $color4 ;
+    stroke: rgba($color6, .3);
     @include transform(rotate(random(360)+deg));
   }
   26%{
@@ -913,6 +1001,64 @@ $media-top: 84px;
   }
   100% {
     @include transform(rotate(720deg));
+  }
+}
+.circle-9c {
+  stroke-width: 1 ;
+  stroke: $screen-color ;
+  @include animation-set;
+  @include animation-name(circle-9c );
+  @include animation-duration($time);
+  @include animation-delay($delay*3);
+}
+@include keyframes(circle-9c) {
+  0% {
+    stroke: $screen-color ;
+    @include transform(rotate(0deg));
+  }
+  10%{
+    stroke: $screen-color ;
+  }
+  11%,25% {
+    stroke: $color6 ;
+    @include transform(rotate(random(360)+deg));
+  }
+  26%{
+    stroke: $screen-color ;
+
+  }
+  100% {
+    @include transform(rotate(720deg));
+  }
+}
+.circle-9d {
+  stroke-width: 7 ;
+  stroke: $screen-color ;
+  stroke-dasharray: 404,404;
+  @include transform(rotate(random(360)+deg));
+  @include animation-set;
+  @include animation-name(circle-9d);
+  @include animation-duration($time);
+  @include animation-delay($delay*3);
+
+}
+@include keyframes(circle-9d) {
+  0% {
+    stroke: $screen-color ;
+    @include transform(rotate(0deg));
+  }
+  10%{
+    stroke: $screen-color ;
+  }
+  11%,25% {
+    stroke: $color4 ;
+    @include transform(rotate(-360deg));
+  }
+  26%{
+    stroke: $screen-color ;
+  }
+  100% {
+    @include transform(rotate(-720deg));
   }
 }
 /////////////////////////////////////

@@ -3,6 +3,9 @@
         <clipPath id="clip-dash">
             <circle cx="0" cy="0" r="68" fill="black" />
         </clipPath>
+        <clipPath id="clip-dash2">
+            <circle cx="0" cy="0" r="110" fill="black" />
+        </clipPath>
         <clipPath id="clip-ring">
             <circle cx="25" cy="0" r="0" fill="black" />
         </clipPath>
@@ -12,6 +15,25 @@
     <g class="part-1" stroke-width="0" fill="transparent" fill-rule="evenodd">
         <circle class="circle-1" r="32" cx="0" cy="0" stroke-width="6"/>
         <circle class="circle-2" r="38" cx="0" cy="0" stroke-width="2" />
+        <g class="middle-origin-tiangle"  stroke-width="0" fill="transparent" transform="translate(0, 0)">
+            <g class="middle-center-tiangle" stroke-width="0" fill="transparent">
+                <g class="screen-triangle" stroke-width="0"  >
+                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
+                </g>
+                <g class="screen-triangle" stroke-width="0"  >
+                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
+                </g>
+                <g class="screen-triangle" stroke-width="0"  >
+                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
+                </g>
+                <g class="screen-triangle" stroke-width="0"  >
+                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
+                </g>
+                <g class="screen-triangle" stroke-width="0"  >
+                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
+                </g>
+            </g>
+        </g>
     </g>
 
 
@@ -67,11 +89,19 @@
 
 
     <g class="part-3" stroke-width="0" fill="transparent" fill-rule="evenodd">
-        <circle  class="circle-7" r="80" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
+        <circle  class="circle-7" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
+        <circle  class="circle-7c" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
+
         <g class="middle-origin-media"  stroke-width="0" fill="transparent" transform="translate(0, 0)">
+
+
             <g class="middle-center-media"  stroke-width="0" fill="transparent">
+                <g class="circle-7-bg">
+                    <circle  class="circle-7-media" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
+                </g>
                 <g class="media-system icon-tv" stroke-width="0" >
-                         <path d="M2.84217094e-14,9.00213944 C2.84217094e-14,4.03039511 4.0349711,0 9.00973427,0 L110.2101,0 C115.186039,0 119.219835,4.02611559 119.219835,9.00213944 L119.219835,72.7479519 C119.219835,77.7196962 115.184864,81.7500913 110.2101,81.7500913 L9.00973427,81.7500913 C4.03379543,81.7500913 2.84217094e-14,77.7239758 2.84217094e-14,72.7479519 L2.84217094e-14,9.00213944 Z M44.2428702,81.8724495 C44.2428702,81.8724495 43.6099799,87.2385128 43.1419764,88.7536902 C42.7208291,90.1171691 41.6891191,93.6432278 39.8375039,94.8013938 C34.4610353,98.1643188 39.1391741,99.5615638 39.1391741,99.5615638 L57.5476318,99.5139118 L57.5476318,81.7500913 L44.2428702,81.8724495 Z M70.8523934,81.8724495 C70.8523934,81.8724495 71.4852838,87.2385128 71.9532873,88.7536902 C72.3744345,90.1171691 73.4061446,93.6432278 75.2577597,94.8013938 C80.6342283,98.1643188 75.9560896,99.5615638 75.9560896,99.5615638 L57.5476318,99.5139118 L57.5476318,81.7500913 L70.8523934,81.8724495 Z M6.41952956,5.48045305 L113.258843,5.48045305 L113.258843,66.222141 L6.41952956,66.222141 L6.41952956,5.48045305 Z" id="Rectangle-4"></path>
+
+                    <path d="M2.84217094e-14,9.00213944 C2.84217094e-14,4.03039511 4.0349711,0 9.00973427,0 L110.2101,0 C115.186039,0 119.219835,4.02611559 119.219835,9.00213944 L119.219835,72.7479519 C119.219835,77.7196962 115.184864,81.7500913 110.2101,81.7500913 L9.00973427,81.7500913 C4.03379543,81.7500913 2.84217094e-14,77.7239758 2.84217094e-14,72.7479519 L2.84217094e-14,9.00213944 Z M44.2428702,81.8724495 C44.2428702,81.8724495 43.6099799,87.2385128 43.1419764,88.7536902 C42.7208291,90.1171691 41.6891191,93.6432278 39.8375039,94.8013938 C34.4610353,98.1643188 39.1391741,99.5615638 39.1391741,99.5615638 L57.5476318,99.5139118 L57.5476318,81.7500913 L44.2428702,81.8724495 Z M70.8523934,81.8724495 C70.8523934,81.8724495 71.4852838,87.2385128 71.9532873,88.7536902 C72.3744345,90.1171691 73.4061446,93.6432278 75.2577597,94.8013938 C80.6342283,98.1643188 75.9560896,99.5615638 75.9560896,99.5615638 L57.5476318,99.5139118 L57.5476318,81.7500913 L70.8523934,81.8724495 Z M6.41952956,5.48045305 L113.258843,5.48045305 L113.258843,66.222141 L6.41952956,66.222141 L6.41952956,5.48045305 Z" id="Rectangle-4"></path>
                 </g>
 
                 <g class="media-system icon-imac" stroke-width="0"  >
@@ -91,14 +121,21 @@
                 </g>
             </g>
         </g>
-        <circle class="circle-7a" r="80" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
+        <circle class="circle-7a" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
     </g>
     <g class="part-4" stroke-width="0" fill="transparent" fill-rule="evenodd">
-        <circle class="circle-8a" r="96" cx="0" cy="0"  stroke="black" stroke-width="2"   />
-        <circle class="circle-8" r="103" cx="0" cy="0"  stroke="black" stroke-width="2"   />
-        <circle class="circle-8b" r="106" cx="0" cy="0"   />
+
+        <circle class="circle-8" r="99" cx="0" cy="0"   />
+        <circle class="circle-8d" r="109" cx="0" cy="0"   />
+        <circle class="circle-8b" r="104" cx="0" cy="0"   />
+        <circle class="circle-8e" r="104" cx="0" cy="0"   />
+
+
 
         <g class="middle-origin-browser"  stroke-width="0" fill="transparent" transform="translate(0, 0)">
+            <circle class="circle-8a" r="104" cx="0" cy="0"  stroke="black" stroke-width="2"   />
+            <circle class="circle-8c" r="104" cx="0" cy="0"  />
+
             <g class="middle-center-browser" stroke-width="0" fill="transparent">
                 <g class="screen-browser" stroke-width="0"  >
                     <circle class="stroke-browser" cx="0" cy="0" r="9"  />
@@ -123,33 +160,20 @@
                 </g>
             </g>
         </g>
-        <circle class="circle-8c" r="120" cx="0" cy="0"   />
 
-        <g class="middle-origin-tiangle"  stroke-width="0" fill="transparent" transform="translate(0, 0)">
-            <g class="middle-center-tiangle" stroke-width="0" fill="transparent">
-                <g class="screen-triangle" stroke-width="0"  >
-                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
-                </g>
-                <g class="screen-triangle" stroke-width="0"  >
-                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
-                </g>
-                <g class="screen-triangle" stroke-width="0"  >
-                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
-                </g>
-                <g class="screen-triangle" stroke-width="0"  >
-                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
-                </g>
-                <g class="screen-triangle" stroke-width="0"  >
-                    <polygon  class="triangle" fill="#D8D8D8"  points="8 0 16 25 0 25 "></polygon>
-                </g>
-            </g>
-        </g>
+
+
+
     </g>
-    <g class="part-5" stroke-width="0" fill="transparent" fill-rule="evenodd">
 
-        <circle  class="circle-9" r="130" cx="0" cy="0"  />
-        <circle  class="circle-9a" r="125" cx="0" cy="0"  />
-        <circle  class="circle-9b" r="136" cx="0" cy="0"   />
+    <g class="part-5" stroke-width="0" fill="transparent" fill-rule="evenodd">
+        <circle class="circle-9e" r="123" cx="0" cy="0"  stroke="black" stroke-width="2"   />
+
+        <circle  class="circle-9" r="123" cx="0" cy="0"  />
+        <circle  class="circle-9a" r="123" cx="0" cy="0"  />
+        <circle  class="circle-9b" r="119" cx="0" cy="0"  />
+        <circle  class="circle-9c" r="129" cx="0" cy="0"   />
+        <circle  class="circle-9d" r="135" cx="0" cy="0"   />
 
     </g>
     </g>
