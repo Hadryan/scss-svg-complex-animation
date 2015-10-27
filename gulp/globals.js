@@ -6,6 +6,8 @@ global.fs               = require('fs');
 global.argv             = require('minimist')(process.argv.slice(2));
 global.path             = require('path');
 global.filter           = require('gulp-filter');
+global.del              = require('del');
+global.runSequence      = require('run-sequence');
 
 global.VERSION          = argv.version || require('../package.json').version;
 global.LR_PORT          = argv.port || argv.p || 8080;
