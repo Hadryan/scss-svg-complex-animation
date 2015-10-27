@@ -89,8 +89,9 @@
 
 
     <g class="part-3" stroke-width="0" fill="transparent" fill-rule="evenodd">
-        <circle  class="circle-7" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
         <circle  class="circle-7c" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
+
+        <circle  class="circle-7" r="82" cx="0" cy="0"  stroke="black" stroke-width="2" fill="none"  />
 
         <g class="middle-origin-media"  stroke-width="0" fill="transparent" transform="translate(0, 0)">
 

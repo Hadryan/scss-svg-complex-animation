@@ -537,11 +537,35 @@ $media-top: 87px;
 }
 .circle-7c {
   stroke-width: 18 ;
-  stroke: $screen-color;
-  stroke-dasharray: 134 ;
+  stroke: lighten($screen-color, 5%);
+  stroke-dasharray: 93,180;
+  @include transform(rotate(142deg));
+  @include animation-set;
+  @include animation-name(circle-7c);
+  @include animation-duration($time);
+  @include animation-delay($delay);
+
+  @include keyframes(circle-7c ) {
+    0% {
+      stroke: lighten($screen-color, 5%);
+    }
+    13% {
+      stroke: lighten($screen-color, 5%);
+    }
+    14%, 25% {
+      stroke: $color4;
+
+    }
+    26% {
+      stroke: lighten($screen-color, 5%);
+    }
+    100% {
+      stroke: lighten($screen-color, 5%);
+    }
+  }
 }
 .circle-7a {
-  stroke-width: 9 ;
+  stroke-width: 7 ;
   stroke-dashoffset: 1707;
   stroke-dasharray: 558 ;
   stroke: $color4;
@@ -560,13 +584,8 @@ $media-top: 87px;
   }
   9% {
     stroke-dasharray: 558 ;
-
   }
-  13% {
-    stroke-dasharray: 685 ;
-  }
-
-  26% {
+  13%,26% {
     stroke-dasharray: 685 ;
   }
   30% {
@@ -582,7 +601,8 @@ $media-top: 87px;
   //stroke: lighten(rgba($screen-color, 1), 23%);
   stroke: $color4;
   stroke-width: 0 ;
-  stroke-dasharray: 23,8, 24,8, 23,6, 20,11, 20,401;
+  //stroke-dasharray: 23,8, 24,8, 23,6, 20,11, 20,401;
+  stroke-dasharray:  143,370;
   @include transform(rotate(201deg));
   @include animation-set;
   @include animation-name(circle-7-media );
@@ -598,7 +618,7 @@ $media-top: 87px;
     stroke-width: 0 ;
   }
   11%, 28% {
-    stroke-width: 20 ;
+    stroke-width: 16 ;
 
   }
   29% {
@@ -787,7 +807,7 @@ $browser-rotate:(92deg);
 .circle-8a {
   stroke-width: 6 ;
   stroke: $screen-color;
-  stroke-dasharray: 1,14,1,28,1, 87;
+  stroke-dasharray: 1,0,1,0,1, 87;
   @include transform(rotate(21deg)); //26
   @include animation-set;
   @include animation-name(circle-8a);
@@ -800,6 +820,7 @@ $browser-rotate:(92deg);
   0% {
     stroke: $screen-color;
     @include transform(rotate(21deg));
+    stroke-dasharray: 1,0,1,0,1, 87;
   }
   10% {
     stroke: $screen-color;
@@ -807,6 +828,7 @@ $browser-rotate:(92deg);
   }
   11%, 29% {
     stroke: rgba($color1, 1);
+    stroke-dasharray: 1,14,1,28,1, 87;
   }
   30% {
     stroke: $screen-color;
@@ -815,6 +837,7 @@ $browser-rotate:(92deg);
   100% {
     stroke: $screen-color;
     @include transform(rotate(381deg));
+    stroke-dasharray: 1,0,1,0,1, 87;
   }
 }
 
