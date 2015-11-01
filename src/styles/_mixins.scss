@@ -1,0 +1,54 @@
+//@import "bourbon";
+@import "~bourbon/app/assets/stylesheets/bourbon";
+
+.flex-center {
+  @include justify-content(center);
+  @include align-content(center);
+  @include align-items(center);
+}
+
+$color1: darken(#fff, 3%);
+$color2: #A1BF16;  //#88A600;; //#95C801; //#B9D03A; //#BCCD2A; // green
+$color3: #159CCE; //#159CCE; //#CC58E4; //#BE32DC;  //#E47100; // orange
+//$color4: #373737;
+$color4: #292929;
+$color5: #000;
+$color6: #8363b5;
+$color7: #FB8D04;
+
+//////////////////////////
+$screen-color: darken(rgba(#fff, .3), 25%);
+$screen-color-darken: darken($screen-color, 40%);
+
+$screen:400px;
+
+$stroke-5: 15;
+$stroke-6: $stroke-5*2 + 7;
+
+//////////////////////////
+
+$time: 20s;
+$delay:$time/4;
+
+$triangle-scale: .3;
+
+$media-top: 87px;
+
+$browser-scale:(.17);
+$browser-rotate:(92deg);
+
+//////////////////////////////////////////////////
+@mixin flex-center {
+  @include display(flex);
+  @include flex-direction(row);
+  @include align-items(center);
+  @include justify-content(center);
+}
+
+@mixin animation-set {
+  @include animation-timing-function(linear);
+  @include animation-iteration-count(infinite); //infinite
+  @include animation-direction(normal);
+  @include animation-fill-mode(forwards);
+  @include animation-delay(0s);
+}

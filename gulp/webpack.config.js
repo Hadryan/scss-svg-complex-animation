@@ -1,10 +1,10 @@
-var webpack = require('webpack');
+//var webpack = require('webpack');
 var path = require('path');
 var config = {
   context: path.join(__dirname, '..'),
   cache: true,
   entry: {
-    'bundle': ['./src/index.js']
+    'bundle': ['./src/index.js', './src/styles/main.scss']
   },
 	externals: {
 		'angular': 'angular'
@@ -17,7 +17,17 @@ var config = {
     extensions: ['', '.js', '.scss', '.css', '.jade'],
     modulesDirectories: ['node_modules']
   },
+  eslint: {
+    configFile: './.eslintrc'
+  },
   module: {
+    preLoaders: [
+      {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        exclude: /(node_modules|bower_components)/
+      }
+    ],
     loaders: [
     {
       test: /\.css$/,
@@ -39,8 +49,6 @@ var config = {
       loader: "style!css!sass?outputStyle=expanded&" +
         "includePaths[]=" +
         (path.resolve(__dirname, '..', "node_modules")) + "&" +
-        "includePaths[]=" +
-        (path.resolve(__dirname, '..', "node_modules/bourbon/app/assets/stylesheets")) + "&" +
         "includePaths[]=" +
         (path.resolve(__dirname, '..', "src/styles"))
     }]

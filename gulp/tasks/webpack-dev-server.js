@@ -21,7 +21,6 @@ exports.task = function () {
 	devConfig.debug = true;
 
 	devConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
-	devConfig.plugins.push(new webpack.NoErrorsPlugin());
 	devConfig.plugins.push(new webpack.SourceMapDevToolPlugin({}));
 
 	compiler = webpack(devConfig);
