@@ -7,27 +7,29 @@
   @include align-items(center);
 }
 
-$color1: darken(#fff, 3%);
-$color2: #A1BF16;  //#88A600;; //#95C801; //#B9D03A; //#BCCD2A; // green
-$color3: #159CCE; //#159CCE; //#CC58E4; //#BE32DC;  //#E47100; // orange
-//$color4: #373737;
-$color4: #292929;
-$color5: #000;
-$color6: #8363b5;
-$color7: #FB8D04;
+$circle-ikon: darken(#fff, 50%);
+$circle1: #b569ad;  //#88A600;; //#95C801; //#B9D03A; //#BCCD2A; // green
+$circle2: #6F8C00; //#159CCE; //#CC58E4; //#BE32DC;  //#E47100; // orange
+$circle3: #D67800;
+$circle5: #8363b5;
+$circle6: #159CCE;
+$circle-dark: #000;
+$circle-light: #fff;
+$circle-grey: rgba(#444, .5);
 
 //////////////////////////
-$screen-color: darken(rgba(#fff, .3), 25%);
-$screen-color-darken: darken($screen-color, 40%);
+$screen-color: $circle-grey;
+$circle-transparency: rgba($screen-color, .3) ;
 
-$screen:400px;
 
-$stroke-5: 15;
+$screen:100%;
+
+$stroke-5: 14;
 $stroke-6: $stroke-5*2 + 7;
 
 //////////////////////////
 
-$time: 20s;
+$time: 40s;
 $delay:$time/4;
 
 $triangle-scale: .3;
