@@ -8,11 +8,11 @@
 }
 
 $circle-ikon: darken(#fff, 50%);
-$circle1: #b569ad;  //#88A600;; //#95C801; //#B9D03A; //#BCCD2A; // green
+$circle1: #8E3059;  //#88A600;; //#95C801; //#B9D03A; //#BCCD2A; // green
 $circle2: #6F8C00; //#159CCE; //#CC58E4; //#BE32DC;  //#E47100; // orange
 $circle3: #D67800;
 $circle5: #8363b5;
-$circle6: #159CCE;
+$circle6: #005FA5;
 $circle-dark: #000;
 $circle-light: #fff;
 $circle-grey: rgba(#444, .5);
@@ -49,8 +49,12 @@ $browser-rotate:(92deg);
 
 @mixin animation-set {
   @include animation-timing-function(linear);
-  @include animation-iteration-count(infinite); //infinite
+  @include animation-iteration-count(infinite);
   @include animation-direction(normal);
   @include animation-fill-mode(forwards);
   @include animation-delay(0s);
 }
+
+///////////////////////////////////////////////// text
+
+$text-space: 35px;

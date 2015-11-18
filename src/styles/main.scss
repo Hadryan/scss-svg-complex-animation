@@ -1,13 +1,24 @@
 @import "mixins";
 
+html { font-size: 62.5% !important; }
+body {
+  font-family: Quicksand, Verdana, sans-serifervetica;;
+  font-weight: bold;
+  font-size: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,300);
+} /* =14px */
+
 .animationWrapper-screen {
   @include flex-center;
   position: relative;
 
   .screen {
-    width: $screen;
+    width: $screen *1.7;
     height: $screen;
     @include transform(scale(1));
+    background-color: #2e2e2e;
   }
 
   svg {
@@ -20,7 +31,11 @@
   }
 
   .all-wrapper{
-    @include transform(translate(150px, 150px));
+    @include transform(translate(70px, 150px));
+  }
+  .all-wrapper-text{
+    @include transform(translate(260px, 70px));
+    background-color: #222;
   }
 
 } //animationWrapper-screen
@@ -111,7 +126,7 @@
 
 @for $t from 0 through 10 {
   .screen-triangle:nth-child(#{$t}) {
-    @include transform(rotate(360deg / 10 + (12deg * $t) ) translate(140px, 0px));
+    @include transform(rotate(360deg / 10 + (12deg * $t) ) translate(150px, 0px));
   }
 }
 .screen-triangle polygon{
@@ -411,16 +426,16 @@
 }
 
 .circle-7 {
-  stroke-width: 14 ;
+  stroke-width: 16 ;
   stroke: $circle-transparency;
+  stroke-dasharray: 1,1;
 }
 
 .circle-7c {
-  stroke-width: 12 ;
+  stroke-width: 2 ;
   stroke: $circle-transparency;
-  //stroke-dasharray: 93,180;
-  stroke-dasharray: 1,8;
-  @include transform(rotate(142deg));
+ // stroke-dasharray: 1,4;
+ // @include transform(rotate(142deg));
 }
 
 
@@ -478,7 +493,7 @@
     stroke-width: 0 ;
   }
   11%, 28% {
-    stroke-width: 12 ;
+    stroke-width: 16 ;
 
   }
   29% {
@@ -924,4 +939,78 @@
   }
 }
 /////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+/////////////////////////////////////
+///////////////////////////////////// text description part
 
+
+text {
+  fill: $circle-ikon;
+}
+.group-text-wrapper-1 .icon-text {
+
+  @include transform(translate(-30px, -15px));
+  path{
+    fill: $circle2;
+  }
+}
+.group-text-wrapper-2 .icon-text {
+  @include transform(translate(-30px, -15px) scale(.15));
+  path{
+    fill: $circle1;
+  }
+}
+.group-text-wrapper-3 .icon-text {
+  @include transform(translate(-30px, -15px) scale(.3));
+  path{
+    fill: $circle6;
+  }
+}
+.group-text-wrapper-4 .icon-text {
+  @include transform(translate(-30px, -15px) scale(.3));
+  path{
+    fill: $circle5;
+  }
+}
+.group-text-1 {
+  @include transform(translate(20px, 0px));
+}
+.group-text-2 {
+  @include transform(translate(20px, $text-space));
+}
+.group-text-3 {
+  @include transform(translate(20px, $text-space*2));
+}
+.group-text-4 {
+  @include transform(translate(20px, $text-space*3));
+}
+.group-text-5 {
+  @include transform(translate(20px, $text-space*4));
+}
+
+.group-text-wrapper-1,
+.group-text-wrapper-2,
+.group-text-wrapper-3,
+.group-text-wrapper-4 {
+  opacity: 0;
+  @include animation-set;
+  @include animation-name(text-show-hide);
+  @include animation-duration($time);
+}
+.group-text-wrapper-1 {  @include animation-delay(0);}
+.group-text-wrapper-2 {  @include animation-delay($delay);}
+.group-text-wrapper-3 {  @include animation-delay($delay*2);}
+.group-text-wrapper-4 {  @include animation-delay($delay*3);}
+
+@include keyframes(text-show-hide) {
+  0%, 10% {
+    opacity: 0;
+  }
+  11%,25% {
+    opacity: 1;
+  }
+  26%, 100% {
+    opacity: 0;
+  }
+}
