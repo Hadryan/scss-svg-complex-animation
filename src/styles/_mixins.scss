@@ -32,6 +32,9 @@ $stroke-6: $stroke-5*2 + 7;
 $time: 40s;
 $delay:$time/4;
 
+$time-scale: $time/8;
+$time-scale-delay: $time/4;
+
 $triangle-scale: .3;
 
 $media-top: 87px;
@@ -57,4 +60,5 @@ $browser-rotate:(92deg);
 
 ///////////////////////////////////////////////// text
 
-$text-space: 35px;
+$text-space: 40px;
+$icon-left: -40px;
