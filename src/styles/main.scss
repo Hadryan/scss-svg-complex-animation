@@ -824,8 +824,8 @@ body {
 
 ////////////////////////////////////////////////////////////////// part-5
 .circle-ray {
-  stroke-width: 320px;
-  stroke-dasharray: 62;
+  stroke-width: 0px;
+  stroke-dasharray: 29;
   @include transform(rotate(-10deg));
   @include animation-set;
   @include animation-name(circle-ray);
@@ -835,22 +835,22 @@ body {
 }
 @include keyframes(circle-ray) {
   0% {
-    stroke-width: 1px;
+    stroke-width: 0;
     stroke: $circle-transparency;
   }
   10% {
-    stroke-width: 1px;
+    stroke-width: 0;
 
   }
   11%, 25% {
-    stroke-width: 330px;
-    stroke: rgba($circle5, .1);
+    stroke-width: 149px;
+    stroke: rgba($circle5, .13);
   }
   26% {
-    stroke-width: 1px;
+    stroke-width: 0;
   }
   100% {
-    stroke-width: 1px;
+    stroke-width: 0;
     stroke: $circle-transparency;
   }
 }
@@ -1108,7 +1108,7 @@ text {
 }
 .group-text-wrapper-1  {
   .icon-text {
-    @include transform(translate($icon-left, -15px));
+    @include transform(translate($icon-left, -18px) scale(1.1));
     path {
       fill: $circle2;
     }
@@ -1119,7 +1119,7 @@ text {
 }
 .group-text-wrapper-2 {
   .icon-text {
-    @include transform(translate($icon-left, -15px) scale(.18));
+    @include transform(translate($icon-left, -17px) scale(.21));
     path {
       fill: $circle1;
     }
@@ -1127,16 +1127,20 @@ text {
   text {
     fill: $circle-ikon;
   }
+  .group-text-3 .icon-text {
+    @include transform(translate($icon-left + 5px, -17px) scale(.21));
+  }
   .group-text-4 .icon-text {
-    @include transform(translate($icon-left + 5px, -15px) scale(.18));
+    @include transform(translate($icon-left + 7px, -17px) scale(.21));
   }
   .group-text-5 .icon-text {
-    @include transform(translate($icon-left + 7px, -15px) scale(.18));
+    @include transform(translate($icon-left + 7px, -17px) scale(.21));
   }
 }
+
 .group-text-wrapper-3 {
   .icon-text {
-    @include transform(translate($icon-left, -15px) scale(.35));
+    @include transform(translate($icon-left, -17px) scale(.35));
     path {
       fill: $circle6;
     }
