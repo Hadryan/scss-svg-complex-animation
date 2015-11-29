@@ -1243,10 +1243,10 @@ text {
 
 .light-animation {
   .all-wrapper{
-    @include transform(translate(0px, 150px));
+    @include transform(translate(150px, 150px));
   }
   .all-wrapper-text {
-    //display: none;
+    display: none;
   }
   .button-play {
     display: none;
