@@ -1210,6 +1210,7 @@ text {
   background: rgba(#fff, .1);
   color: rgba(#fff, .5);
   @include transition(all .3s linear);
+  cursor: pointer;
 
   &:hover {
     background: rgba($circle1, 1);
