@@ -4,8 +4,6 @@ html { font-size: 62.5% !important; }
 body {
   font-family: Quicksand, Verdana, sans-serifervetica;;
   font-weight: bold;
-  //-webkit-font-smoothing: antialiased;
-  //-moz-osx-font-smoothing: grayscale;
   @import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,300);
 } /* =14px */
 
@@ -24,10 +22,6 @@ body {
   svg {
     width: 100%;
     height: 100%;
-
-    circle {
-      //fill: transparent;
-    }
   }
 
   .all-wrapper{
@@ -191,7 +185,7 @@ body {
     @include transform(rotate(360deg / 10 + (12deg * $t) ) translate(150px, 0px));
   }
 }
-.screen-triangle polygon{
+.screen-triangle polygon {
   fill: $screen-color;
   stroke-linejoin: bevel; // miter; //round;
   @include transform(rotate(-90deg)  scale($triangle-scale));
@@ -460,7 +454,7 @@ body {
   }
 }
 
-.media-system path{
+.media-system path {
   fill: $circle-ikon;
   @include transform(rotate(92deg)  scale(.11));
   @include animation-set;
@@ -533,7 +527,6 @@ body {
 }
 
 .circle-7-media {
-  //stroke: rgba($circle-dark, .1);
   stroke: $circle-dark;
   stroke-width: 0 ;
   //stroke-dasharray: 23,8, 24,8, 23,6, 20,11, 20,401;
@@ -554,7 +547,6 @@ body {
   }
   11%, 28% {
     stroke-width: 16 ;
-
   }
   29% {
     stroke-width: 0 ;
@@ -636,7 +628,6 @@ body {
   fill: $screen-color;
   stroke: $screen-color;
   @include transform(rotate(315deg) );
-
   stroke-dasharray: 17,10 ;
   @include animation-set;
   @include animation-name(screen-browser);
@@ -763,13 +754,6 @@ body {
 .circle-8b {
   stroke-width: 11;
   stroke: $circle-transparency;
-  //stroke-dasharray: 116,17;
-  @include transform(rotate(0deg));
-  @include animation-set;
-  @include animation-name(circle-8b);
-  @include animation-duration($time);
-  @include animation-delay($delay*2);
-
 }
 .circle-8, .circle-8d {
   stroke-width: 1;
@@ -824,7 +808,7 @@ body {
 .circle-ray {
   stroke-width: 0px;
   stroke-dasharray: 29;
-  @include transform(rotate(-10deg));
+  @include transform(rotate(-9deg));
   @include animation-set;
   @include animation-name(circle-ray);
   @include animation-duration($time);
@@ -1249,3 +1233,188 @@ text {
     content: "\f04b";
   }
 }
+
+
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+///////////////////////////////////
+/////////////////////////////////// light
+
+.light-animation {
+  .all-wrapper{
+    @include transform(translate(0px, 150px));
+  }
+  .all-wrapper-text {
+    //display: none;
+  }
+  .button-play {
+    display: none;
+  }
+  .part-1,
+  .part-2,
+  .part-3,
+  .part-4,
+  .part-5,
+  .glob,
+  .glob2,
+  .circle-1,
+  .circle-2,
+  .screen-triangle polygon,
+  .circle-3,
+  .circle-3-dash,
+  .circle-4,
+  .middle-origin-system,
+  .system,
+  .circle-6-holder,
+  .circle-6-dash,
+  .middle-center-media,
+  .media-system,
+  .media-system path,
+  .circle-7a,
+  .circle-7-media,
+  .middle-origin-browser,
+  .screen-browser circle,
+  .screen-browser path,
+  .circle-8e,
+  .circle-8a,
+  .circle-8c,
+  .circle-ray,
+  .circle-9e,
+  .circle-9,
+  .circle-9a,
+  .circle-9b,
+  .circle-9c,
+  .circle-9d
+  {
+    @include animation-name(none);
+  }
+
+  .part-1,
+  .part-2,
+  .part-3,
+  .part-4,
+  .part-5 {
+    opacity: 1;
+    @include transform(scale(1.3) rotate(0deg));
+  }
+
+
+  .glob {
+    fill: $circle5;
+  }
+  .circle-1 {
+    stroke: $circle2;
+  }
+  .circle-2 {
+    stroke: $circle2;
+  }
+  .screen-triangle polygon {
+    fill: $circle5;
+  }
+
+  ///// part-2
+  .middle-center-system {
+    @include transform(rotate(18deg));
+  }
+  .circle-3{
+    stroke: $circle-light;
+  }
+  .circle-3-dash {
+    stroke: $circle2;
+  }
+  .circle-4 {
+    stroke: $circle2;
+  }
+  .middle-origin-system {
+    stroke: $circle2;
+  }
+  .system {
+    fill: $circle-light;
+  }
+  .circle-6-holder {
+    stroke: $circle2;
+  }
+  .circle-6-dash {
+    stroke-width: $stroke-6;
+  }
+  ///// part-3
+  .middle-center-media {
+    @include transform(rotate(20deg));
+  }
+
+  @for $s from 0 through 15 {
+    .media-system:nth-child(#{$s}) {
+      @include transform(rotate(-200deg + 22deg*$s) translate($media-top, 0px));
+    }
+  }
+  .media-system path {
+    fill: $circle1;
+  }
+  .circle-7a {
+    stroke-dasharray: 685 ;
+  }
+  .circle-7-media {
+    stroke-width: 16 ;
+  }
+
+  ///// part-4
+
+  .middle-origin-browser {
+    @include transform(rotate(-20deg));
+  }
+  .circle-8b {
+    stroke: rgba($circle-ikon, .4);
+  }
+  .screen-browser circle {
+    fill: $circle-dark ;
+    stroke-width: 1px;
+    stroke: rgba($circle-ikon, .5);
+  }
+  .screen-browser path {
+    fill: $circle6;
+  }
+  .circle-8e {
+    stroke: $circle-dark;
+    stroke-width: 9;
+  }
+  .circle-8a {
+    stroke: rgba($circle-ikon, 1);
+    stroke-dasharray: 1,14,1,28,1, 87;
+  }
+  .circle-8c {
+    stroke-width: 23;
+    @include transform(rotate(-1.5deg));
+    stroke: $circle-dark;
+  }
+
+  ///// part-5
+  .circle-ray {
+    stroke-width: 149px;
+    stroke: rgba($circle5, .13);
+  }
+  .circle-9e {
+    stroke: rgba($circle5, .05);
+  }
+  .circle-9 {
+    stroke: rgba($circle5, .3);
+    @include transform(rotate(-280deg));
+  }
+  .circle-9a {
+    stroke: rgba($circle5, .3);
+    @include transform(rotate(random(180)+deg));
+  }
+  .circle-9b {
+    stroke: rgba($circle5, .3);
+    @include transform(rotate(random(360)+deg));
+  }
+  .circle-9c {
+    stroke: $circle5;
+    @include transform(rotate(random(360)+deg));
+  }
+  .circle-9d {
+    stroke: $circle5;
+    @include transform(rotate(-360deg));
+  }
+
+} // end .light-animation
